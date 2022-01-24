@@ -1,19 +1,34 @@
 <div class="container">
   <div class="row">
-    <form action="">
+    <form action="" [formGroup]="projectForm" (ngSubmit)="onSaveProject()">
       <div class="form-group">
         <label for="name">Project Name</label>
-        <input type="text" class="form-control" id="name" />
+        <input
+          type="text"
+          class="form-control"
+          formControlName="projectName"
+          id="name"
+        />
       </div>
       <br />
       <div class="form-group">
         <label for="email">Mail</label>
-        <input type="text" class="form-control" id="email" />
+        <input
+          type="text"
+          class="form-control"
+          id="email"
+          formControlName="email"
+        />
       </div>
       <br />
       <div class="form-group">
         <label for="status">Project Status</label>
-        <select name="status" id="status" class="form-control">
+        <select
+          name="status"
+          id="status"
+          class="form-control"
+          formControlName="projectStatus"
+        >
           <option value="stable">Stable</option>
           <option value="critical">Critical</option>
           <option value="finished">Finished</option>
